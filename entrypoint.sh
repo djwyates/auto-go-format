@@ -54,6 +54,9 @@ COMMITTER_TOKEN=${!USER_TOKEN:-$GITHUB_TOKEN}
 git config --global user.email "$USER_EMAIL"
 git config --global user.name "$USER_NAME"
 
+echo "Username is $USER_NAME"
+echo "Email is $USER_EMAIL"
+
 
 set -o xtrace
 

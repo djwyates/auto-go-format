@@ -90,7 +90,7 @@ if [[ `git status --porcelain` ]]; then
     git status
     git add .
     git commit -m "Formatting files"
-    git push -f fork $HEAD_BRANCH
+    git push -f origin $HEAD_BRANCH
     COMMENT=":rocket: Your go files have been formatted successfully"
     PAYLOAD=$(echo '{}' | jq --arg body "$COMMENT" '.body = $body')
     COMMENTS_URL=$(cat /github/workflow/event.json | jq -r .pull_request.comments_url)

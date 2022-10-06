@@ -47,6 +47,7 @@ HEAD_REPO=$(echo "$pr_resp" | jq -r .head.repo.full_name)
 HEAD_BRANCH=$(echo "$pr_resp" | jq -r .head.ref)
 
 echo "Base branch for PR #$PR_NUMBER is $BASE_BRANCH"
+echo "Head branch is $HEAD_BRANCH"
 
 USER_TOKEN=${USER_LOGIN}_TOKEN
 COMMITTER_TOKEN=${!USER_TOKEN:-$GITHUB_TOKEN}

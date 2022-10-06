@@ -51,7 +51,6 @@ echo "Head branch is $HEAD_BRANCH"
 
 USER_TOKEN=${USER_LOGIN}_TOKEN
 COMMITTER_TOKEN=${!USER_TOKEN:-$GITHUB_TOKEN}
-git remote set-url origin https://x-access-token:$COMMITTER_TOKEN@github.com/$GITHUB_REPOSITORY.git
 git config --global user.email "$USER_EMAIL"
 git config --global user.name "$USER_NAME"
 
@@ -90,7 +89,7 @@ if [[ `git status --porcelain` ]]; then
     git status
     git add .
     git commit -m "Formatting files"
-    git push -f --set-upstream origin $HEAD_BRANCH
+    git push
     COMMENT=":rocket: Your go files have been formatted successfully"
     PAYLOAD=$(echo '{}' | jq --arg body "$COMMENT" '.body = $body')
     COMMENTS_URL=$(cat /github/workflow/event.json | jq -r .pull_request.comments_url)

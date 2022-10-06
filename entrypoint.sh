@@ -54,13 +54,12 @@ COMMITTER_TOKEN=${!USER_TOKEN:-$GITHUB_TOKEN}
 git config --global user.email "$USER_EMAIL"
 git config --global user.name "$USER_NAME"
 
-git remote add fork https://x-access-token:$COMMITTER_TOKEN@github.com/$HEAD_REPO.git
 
 set -o xtrace
 
 # make sure branches are up-to-date
 git fetch origin $BASE_BRANCH
-git fetch fork $HEAD_BRANCH
+git checkout test5
 
 URL="https://api.github.com/repos/${BASE_REPO}/pulls/${PR_NUMBER}/files"
 FILES=$(curl -s -X GET -G $URL | jq -r '.[] | .filename')

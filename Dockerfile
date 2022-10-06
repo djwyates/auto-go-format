@@ -1,9 +1,9 @@
 FROM golang:alpine
 
 LABEL version="0.0.1"
-LABEL repository="https://github.com/sladyn98/auto-go-format"
-LABEL homepage="https://github.com/sladyn98/auto-go-format"
-LABEL maintainer="sladyn98"
+LABEL repository="https://github.com/djwyates/auto-go-format"
+LABEL homepage="https://github.com/djwyates/auto-go-format"
+LABEL maintainer="djwyates"
 LABEL "com.github.actions.name"="Golang Formatter"
 LABEL "com.github.actions.description"="Automatically formats golang files in pull requests"
 LABEL "com.github.actions.icon"="git-pull-request"

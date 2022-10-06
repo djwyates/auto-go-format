@@ -52,7 +52,7 @@ echo "Head branch is $HEAD_BRANCH"
 USER_TOKEN=${USER_LOGIN}_TOKEN
 COMMITTER_TOKEN=${!USER_TOKEN:-$GITHUB_TOKEN}
 git config --global user.email "$USER_EMAIL"
-git config --global user.name "$USER_NAME"
+git config --global user.name "actions"
 
 echo "Username is $USER_NAME"
 echo "Email is $USER_EMAIL"
